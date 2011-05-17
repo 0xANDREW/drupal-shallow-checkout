@@ -1,0 +1,1 @@
+Performs a SVN checkout of everything in a Drupal tree except sites/default/files as that's the huge directory you typically don't need in your working copy.
