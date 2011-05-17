@@ -5,7 +5,16 @@
 #
 # Usage: drupal-shallow-checkout.sh {repos URL} {path}
 
+if [[ -z "$1" || -z "$2" ]]; then
+    echo "Usage: drupal-shallow-checkout.sh {repos URL} {path}"
+    exit 1
+fi
+
 svn co "$1" "$2" --depth empty
+
+if [ $? -ne 0 ]; then
+    exit 2
+fi
 
 cd "$2"
 
